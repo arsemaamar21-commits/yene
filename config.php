@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $host = 'localhost';
-$dbname = 'Library_managment_systems';
+$dbname = 'library_db';
 $username = 'root';
 $password = '';
 

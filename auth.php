@@ -175,14 +175,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: var(--rose-600);
         }
 
-        .auth-form {
-            space-y: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;  gap: 2rem 
+    margin-bottom: 1.5rem;
+}
+        
 
-        .form-group {
-            space-y: 0.5rem;
-        }
+        ..form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+        
 
         .input-wrapper {
             position: relative;
