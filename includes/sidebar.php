@@ -19,7 +19,7 @@ $is_admin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
             </svg>
         </div>
         <span class="logo-text">eLibrary</span>
-        <button class="sidebar-close" aria-label="Close sidebar" onclick="document.body.classList.remove('sidebar-open')" style="display:inline-flex; align-items:center;">
+        <button class="sidebar-close" aria-label="Close sidebar">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -30,23 +30,6 @@ $is_admin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
 
     <nav class="sidebar-nav">
         <div class="nav-section">
-            
-            <a href="roadmap.php" class="nav-item <?php echo $current_page == 'roadmap.php' ? 'active' : ''; ?>">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="8" y1="6" x2="21" y2="6"></line>
-                    <line x1="8" y1="12" x2="21" y2="12"></line>
-                    <line x1="8" y1="18" x2="21" y2="18"></line>
-                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                </svg>
-                <span>About</span>
-            </a>
-        </div>
-
-
-
-        <div style="padding-top:90px;" class="nav-section">
 
             <div class="nav-items">
                 <a href="index.php" class="nav-item <?php echo $current_page == 'index.php' ? 'active blue' : ''; ?>">
@@ -62,6 +45,17 @@ $is_admin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
                         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                     </svg>
                     <span>Book Catalog</span>
+                </a>
+                <a href="roadmap.php" class="nav-item <?php echo $current_page == 'roadmap.php' ? 'active' : ''; ?>">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                    <span>About</span>
                 </a>
             </div>
         </div>

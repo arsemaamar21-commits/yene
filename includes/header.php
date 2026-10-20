@@ -85,7 +85,7 @@ if (isset($_SESSION['user_id'])) {
 </header>
 
 <!-- Mobile sidebar overlay (controlled via body.sidebar-open) -->
-<div class="modal-overlay-mobile" onclick="document.body.classList.remove('sidebar-open')"></div>
+<div class="modal-overlay-mobile"></div>
 
 <script>
 // Toggle mobile sidebar open/close buttons and overlay
@@ -93,6 +93,7 @@ if (isset($_SESSION['user_id'])) {
     var openBtn = document.getElementById('open-sidebar-btn');
     var closeBtn = document.getElementById('close-sidebar-btn');
     var mobileOverlay = document.querySelector('.modal-overlay-mobile');
+    var sidebarClose = document.querySelector('.sidebar-close');
     function updateVisibility() {
         var isSmall = window.matchMedia('(max-width: 640px)').matches;
         var sidebarOpen = document.body.classList.contains('sidebar-open');
@@ -100,14 +101,17 @@ if (isset($_SESSION['user_id'])) {
         if (closeBtn) closeBtn.style.display = isSmall && sidebarOpen ? 'inline-flex' : 'none';
         if (mobileOverlay) mobileOverlay.style.display = sidebarOpen && isSmall ? 'block' : 'none';
     }
+    function closeSidebar() {
+        document.body.classList.remove('sidebar-open');
+        updateVisibility();
+    }
     if (openBtn) openBtn.addEventListener('click', function(){
         document.body.classList.add('sidebar-open');
         updateVisibility();
     });
-    if (closeBtn) closeBtn.addEventListener('click', function(){
-        document.body.classList.remove('sidebar-open');
-        updateVisibility();
-    });
+    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+    if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeSidebar);
     window.addEventListener('resize', updateVisibility);
     document.addEventListener('DOMContentLoaded', updateVisibility);
 })();
